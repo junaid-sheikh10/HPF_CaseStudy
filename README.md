@@ -20,7 +20,7 @@ The goal of this project is to design, build, and deploy an **automated email tr
 
 * **Email Integration**: Gmail trigger node for inbound message polling.
 
-* **AI Layer**: LangChain Agent + GPT-4o-mini via OpenRouter API for classification and data extraction.
+* **AI Layer**:  GPT-4o-mini via OpenRouter API for classification and data extraction.
 
 * **Data Logging**: Google Sheets integration for structured data persistence.
 
