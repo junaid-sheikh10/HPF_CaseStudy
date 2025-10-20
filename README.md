@@ -240,6 +240,7 @@ The following assumptions define how incoming emails are categorized within the 
 
 * **New Application**
   Triggered when a sender submits a **new grant or funding application**. These emails typically include project details, organization information, or application attachments.
+  Used dummy URL official application portal. 
 
 * **Status Update**
   Used when the sender is **inquiring about the progress or outcome** of an already submitted application. The intent is to check status or next steps.
