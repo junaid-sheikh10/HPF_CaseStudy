@@ -1,6 +1,6 @@
-# Intelligent Inquiry Routing System for Donation Management
+# Intelligent Email Inquiry Routing System for HPF
 
-**Case Study – Automation Engineer (Plattner Foundation)**
+**Case Study – Automation Engineer (Hasso Plattner Foundation)**
 
 ---
 
