@@ -2,6 +2,9 @@
 
 **Case Study – Automation Engineer (Hasso Plattner Foundation)**
 
+<img width="1854" height="1048" alt="Screenshot from 2025-10-20 10-57-50" src="https://github.com/user-attachments/assets/a81b3316-edfa-4868-9d69-5c7ee35c4183" />
+
+
 ---
 
 ## 🧠 Objective
