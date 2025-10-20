@@ -145,38 +145,37 @@ Configure the following credentials inside n8n:
   * Replies are sent for new applications.
   * Data is logged in Google Sheets.
 
----
+
 
 Your **n8n workflow** is now successfully deployed and running on **Azure Web App for Containers**.
 
 
 ---
+## ⚙️ Why This Approach Works Well for n8n
 
-## 🌐 Why This Approach Works Well for n8n
+This deployment method — using **Azure Web App for Containers** with the official **n8n Docker image** — aligns perfectly with n8n’s recommended architecture and design principles.
 
-| Advantage                     | Explanation                                                                                                                                 |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Ease of Deployment**        | Azure App Service natively supports Docker containers, allowing you to deploy n8n without managing virtual machines or Kubernetes clusters. |
-| **Managed Hosting**           | Handles container orchestration, scaling, SSL, and OS patching automatically — ideal for low-maintenance projects.                          |
-| **Persistent Configuration**  | Environment variables and mounted storage provide a clean separation between code, configuration, and state — simplifying updates.          |
-| **Continuous Deployment**     | Integrates directly with GitHub Actions, Azure DevOps, or Container Registries for CI/CD pipelines.                                         |
-| **Scalability & Reliability** | The Web App automatically scales vertically or horizontally based on email volume, ensuring consistent uptime.                              |
-| **Security & Compliance**     | Built-in authentication, HTTPS enforcement, and integration with Azure Key Vault make it production-ready.                                  |
-| **Optimized for n8n**         | Since n8n is container-native, App Service can easily host it as a secure, always-on automation platform without custom orchestration.      |
+* **Official Docker Support**
+  The n8n documentation officially recommends running n8n as a **Docker container**, ensuring full compatibility, easy updates, and consistent performance across environments.
 
-### **Why It’s a Good Fit for n8n Projects**
+* **Native Container Hosting in Azure**
+  Azure App Service for Containers is built to **natively run Docker images**, eliminating the need for complex orchestration or infrastructure setup.
 
-* **Container-Native Environment** – n8n is officially distributed via Docker; Azure’s App Service for Containers runs it without modification.
-* **Simple Scaling** – Perfect for workflows that may grow gradually — scale from one container to multiple instances seamlessly.
-* **Minimal Ops Overhead** – No need for infrastructure engineers or Kubernetes knowledge to maintain it.
-* **Built-in Monitoring** – Integrates with **Azure Monitor** and **Application Insights** for health and performance visibility.
-* **Ideal for Proof-of-Concepts & SME Automation** – Combines low setup cost with enterprise-level stability and security.
+* **Direct Access to the Official n8n Image**
+  The **official n8n Docker image** can be pulled directly from the trusted Docker registry (`https://docker.n8n.io`), ensuring the deployment always uses a secure and up-to-date version.
+
+* **Simplified & Faster Deployment**
+  Since Azure App Service handles networking, scaling, SSL, and maintenance automatically, deploying n8n as a container becomes a **fast, reliable, and low-maintenance process**.
+
+Together, these factors make the Azure App Service container model an ideal hosting environment for **n8n-based automation workflows**, especially for rapid prototyping and production-ready setups.
 
 ---
 
+
 ## ⚙️ Workflow Implementation
 
-<img width="1162" height="625" alt="Screenshot from 2025-10-20 10-59-27" src="https://github.com/user-attachments/assets/0e67c0d8-b1a8-47a0-85db-b0512db9cc7b" />
+<img width="1314" height="593" alt="image" src="https://github.com/user-attachments/assets/3a4d6d94-4cf5-4224-ab84-e62cabbeec6e" />
+
 
 
 ### **Trigger: Gmail Trigger**
@@ -256,16 +255,40 @@ Each category guides the subsequent workflow actions, ensuring that only relevan
 
 
 
-## 🧭 Improvements & Future Enhancements
 
-| Area              | Potential Improvement                                                        |
-| ----------------- | ---------------------------------------------------------------------------- |
-| **AI Accuracy**   | Integrate Azure OpenAI GPT-4-turbo for better classification.                |
-| **Data Storage**  | Replace Google Sheets with Azure Cosmos DB or Table Storage.                 |
-| **Notifications** | Add Teams or Slack alerts for critical email categories.                     |
-| **Security**      | Integrate Azure Key Vault for secret management.                             |
-| **Scalability**   | Migrate to Azure Container Apps or AKS for distributed workflow execution.   |
-| **Monitoring**    | Link App Service to Application Insights for real-time telemetry and alerts. |
+## 🚀 Improvements and Future Enhancements
+
+The current workflow effectively automates email triage and response, but several enhancements can further improve accuracy, scalability, and intelligence.
+
+* **Add Email Labeling**
+  Implement automatic labeling of emails (e.g., “New Application”, “Status Update”) in Gmail to simplify tracking and organization.
+
+* **Human-in-the-Loop for Complex Cases**
+  Introduce a manual review step for ambiguous or high-impact emails to ensure accuracy and contextual understanding.
+
+* **Expand Email Categories**
+  Create additional classification types to handle edge cases or specific types of inquiries (e.g., partnership requests, funding clarifications).
+
+* **Refine Workflow Structure**
+  Optimize the flow logic to improve readability and maintainability, with clear branching for each category.
+
+* **Integrate RAG for General Questions**
+  For general inquiries, use a **Retrieval-Augmented Generation (RAG)** approach connected to a document knowledge base to provide accurate, context-rich responses.
+
+* **Improve Status Update Handling**
+  Maintain a database of application statuses to automatically retrieve and respond with the correct application progress information.
+
+* **Handle Missing Information Gracefully**
+  Add a dedicated sub-flow for cases where users omit their **name** or **organization details**, prompting the AI or workflow to handle it intelligently.
+
+* **Dual-Intent Detection**
+  Create a conditional logic path for emails that contain **multiple intents** (e.g., a new submission that also includes a status inquiry).
+
+* **Integrate Azure OpenAI GPT-4-turbo**
+  Replace the current OpenRouter model with **Azure OpenAI GPT-4-turbo**, enabling deeper integration with the Azure ecosystem, stronger compliance, and enterprise-grade performance.
+
+These enhancements will make the workflow more intelligent, user-friendly, and adaptable for large-scale deployment in a real-world foundation environment.
+
 
 ---
 
