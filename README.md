@@ -2,7 +2,6 @@
 
 **Case Study – Automation Engineer (Hasso Plattner Foundation)**
 
-<img width="1854" height="1048" alt="Screenshot from 2025-10-20 10-57-50" src="https://github.com/user-attachments/assets/a81b3316-edfa-4868-9d69-5c7ee35c4183" />
 
 
 ---
@@ -177,6 +176,9 @@ Your **n8n workflow** is now successfully deployed and running on **Azure Web Ap
 
 ## ⚙️ Workflow Implementation
 
+<img width="1162" height="625" alt="Screenshot from 2025-10-20 10-59-27" src="https://github.com/user-attachments/assets/0e67c0d8-b1a8-47a0-85db-b0512db9cc7b" />
+
+
 ### **Trigger: Gmail Trigger**
 
 * Polls every minute for new **unread emails** in the Inbox.
@@ -271,7 +273,7 @@ Each category guides the subsequent workflow actions, ensuring that only relevan
 
 * `HPF CaseStudy.json` – Exported n8n workflow
 * `README.md` – This documentation file
-* Any supporting environment or configuration scripts (if applicable)
+  
 
 ---
 
